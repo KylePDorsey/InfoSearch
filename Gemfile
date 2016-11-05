@@ -18,6 +18,7 @@ gem 'mime-types'
 gem 'netrc'
 gem 'http-cookie'
 gem 'openssl'
+gem 'mongodb'
 
 gem 'shotgun'
 gem 'webrobots'

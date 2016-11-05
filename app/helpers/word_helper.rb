@@ -3,7 +3,7 @@ require_relative '../models/word'
 module WordHelper
   def self.nokogiri_to_words(nokogiri_obj)
     tag_content= []
-    tags = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'li', 'a']
+    tags = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'li', 'p', 'a']
 
     tags.each do |tag|
       tag_content << nokogiri_obj.css(tag).map { |p| p.inner_text }
