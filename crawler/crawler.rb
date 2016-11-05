@@ -1,9 +1,10 @@
 class Crawler
-  attr_accessor :links_to_scrape, :link_bucket, :current_url
+  attr_accessor :links_to_scrape, :link_bucket, :current_url, :test
   def initialize
     @links_to_scrape = []
     File.foreach("links") {|link| self.links_to_scrape << link.chomp}
     @link_bucket = []
+    @self.test = false
 
     self.scrape_all
 
@@ -12,7 +13,6 @@ class Crawler
   def scrape_all
     links_to_scrape[0..-2].each do |link|
       self.current_url = link
-      p self.current_url
       begin
         self.scrape
       rescue
@@ -20,7 +20,12 @@ class Crawler
       end
     end
     self.link_bucket.uniq!
-    File.open("links", "w+") do |f|
+    if self.test
+      file_name = "text"
+    else
+      file_name = "links"
+    end
+    File.open(file_name, "w+") do |f|
       self.link_bucket.each {|link| f.puts(link)}
     end
   end
