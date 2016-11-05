@@ -3,12 +3,13 @@
 #      http://stackoverflow.com/questions/7243486/why-do-you-need-require-bundler-setup
 ENV['BUNDLE_GEMFILE'] ||= File.expand_path('../../Gemfile', __FILE__)
 
-require 'bundler/setup' if File.exists?(ENV['BUNDLbundle E_GEMFILE'])
+require 'bundler/setup'
 
 # Require gems we care about
 require 'rubygems'
 
 require 'uri'
+require 'open-uri'
 require 'pathname'
 
 require 'pg'

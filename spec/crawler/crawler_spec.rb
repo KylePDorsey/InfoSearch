@@ -1,20 +1,24 @@
 require_relative "../../crawler/crawler"
+require_relative "../../app/helpers/links_file_helper"
 
 describe Crawler do
-  let(:crawler) {Crawler.new()}
+  let(:crawler) {Crawler.new(true)}
 
-  it "has an array of links to scrap" do
-    crawler.links_to_scrape = ['/../test1.html']
-    expect(crawler.links_to_scrape).to eq (['/../test1.html'])
+  it "has an readable attribute links_to_scrap" do
+    crawler.test_seed
+    crawler.links_to_scrape
+    expect(crawler.links_to_scrape.class).to eq Array
   end
 
-  it "has an array of bucket links" do
-    crawler.link_bucket = ['/../test1.html']
+  it "has an readable attribute bucket_links" do
+    crawler.test_seed
+    crawler.scrape_all
     expect(crawler.link_bucket.class).to eq Array
   end
 
-  it "has writes crawled links to a file" do
-    crawler.link_bucket = ['/../test1.html']
-    expect(crawler.link_bucket.class).to eq Array
+  it "reads crawled links to a file" do
+    crawler.test_seed
+    crawler.scrape_all
+    expect(File.return_lines("test")).to eq (['../test_html/test1'])
   end
 end

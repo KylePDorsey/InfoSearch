@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 
 # PostgreSQL driver
 gem 'pg'
-
 # Sinatra driver
 gem 'sinatra', '~> 1.0'
 gem 'sinatra-contrib'
@@ -18,6 +17,7 @@ gem 'mime-types'
 gem 'netrc'
 gem 'http-cookie'
 gem 'openssl'
+
 
 gem 'shotgun'
 gem 'webrobots'
