@@ -1,6 +1,19 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    activemodel (4.2.7.1)
+      activesupport (= 4.2.7.1)
+      builder (~> 3.1)
+    activerecord (4.2.7.1)
+      activemodel (= 4.2.7.1)
+      activesupport (= 4.2.7.1)
+      arel (~> 6.0)
+    activesupport (4.2.7.1)
+      i18n (~> 0.7)
+      json (~> 1.7, >= 1.7.7)
+      minitest (~> 5.1)
+      thread_safe (~> 0.3, >= 0.3.4)
+      tzinfo (~> 1.1)
     arel (6.0.3)
     backports (3.6.6)
     bson (4.1.1)
@@ -27,7 +40,7 @@ GEM
     method_source (0.8.2)
     mime-types (2.6.1)
     mini_portile (0.6.2)
-    minitest (5.8.0)
+    minitest (5.9.1)
     mongo (2.3.1)
       bson (~> 4.1)
     mongoid (5.1.5)
@@ -118,6 +131,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activerecord (~> 4.2.0)
+  activesupport (~> 4.2.0)
   bson_ext
   capybara
   factory_girl

@@ -1,4 +1,3 @@
-require_relative '../models/word'
 
 module WordHelper
   def self.nokogiri_to_words(nokogiri_obj)
