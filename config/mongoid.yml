@@ -3,4 +3,5 @@ development:
     default:
       database: test
       hosts:
-        - localhost:27017
+        - 104.236.48.250:27017
+
